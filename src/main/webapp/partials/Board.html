@@ -1,0 +1,74 @@
+<html>
+<head>
+	<title>Welcome to Virtual Is Viral</title>
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container-fluid">			
+				<div class="navbar-header">	
+					<a class="navbar-brand" href="#" ng-click="w=''">Virtual Is Viral</a>
+				</div>
+				<form class="navbar-form navbar-left" role="search">
+	        <input type="search" class="form-control" ng-model="w" placeholder="Search ..."/>
+			  </form>
+		     <ul class="nav navbar-nav navbar-right">
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{user}} <b class="caret"></b></a>
+		          <ul class="dropdown-menu">
+		            <li><a href ng-click="getAllWorks()">Common Board</a></li>
+								<li><a href ng-click="getUserWorks('borobio')">Your Board</a></li>		
+		            <li class="divider"></li>
+		            <li><a href="#">Logout</a></li>
+		          </ul>
+		         </li>
+		         <li><a href="#"><span class="badge" >42</span></a></a></li>
+	      	</ul>
+			</div>
+			
+		</nav>
+	</header>
+	<section>
+		<div class="container-fluid" ng-controller="WorkDetailsCtrl">
+			<div class="col-xs-6 col-md-4 col-lg-3 work" ng-repeat="work in works | filter:w" >
+					<div ng-click="open(work.Id)">
+						<img src= './img/{{work.ImageId}}.jpg'/>										
+					</div>
+					<div>[{{$index + 1}}] {{work.Name}}: {{work.Description}}
+						<a href="#"><span class="glyphicon glyphicon-thumbs-up"/></a>
+					</div>
+					<a href="#">{{work.User}}</a>
+			</div>
+
+	  </div>
+	</section>
+
+
+
+	<footer>
+		<p>Copyright 2014 Leeloo Inc.</p>
+	</footer>
+</body>
+
+
+</html>
+<!--
+	<div class="works-panel">
+			<div class="columns">
+			<div class="work" ng-repeat="work in works | filter:w" >	
+				<p> [{{$index + 1}}] {{work.Name}}: {{work.Description}}. By {{work.User}}</p>
+			</div>
+		  </div>
+	    </div>
+
+<div class="dropdown">
+						[{{$index + 1}}] {{work.Name}}: {{work.Description}}
+					  <a data-toggle="dropdown" href="#" ><span class="glyphicon glyphicon-plus"></span></a>
+					  <ul class="dropdown-menu">
+					    <li><a href="#">Like <span class="glyphicon glyphicon-thumbs-up"/></a></li>
+				    	<li><a href="#">Comment <span class="glyphicon glyphicon glyphicon-pencil"/></a></li>
+					  </ul>
+					</div>
+
+
+	-->
