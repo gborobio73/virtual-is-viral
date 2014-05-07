@@ -1,4 +1,4 @@
 virtual-is-viral
 ================
 
-Tales fro the Crypt.
+Tales from the Crypt.
