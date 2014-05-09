@@ -12,4 +12,9 @@ vivApp.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: 'partials/Board.html',
       controller: 'boardController'
     })
+    .state('NewBoard', {
+      url: '/NewBoard',
+      templateUrl: 'partials/NewBoard.html',
+      controller: 'boardController'
+    })
 });
