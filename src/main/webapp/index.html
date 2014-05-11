@@ -1,6 +1,13 @@
 <html ng-app="viv">
   <head>
     <title>Virtual Is Viral</title>
+
+    <!-- Enable media queries for old IE -->
+    <!--[if lt IE 9]>
+       <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">  
     	
    	<script src="./scripts/angular.js"></script>
    	<script src="./scripts/angular-ui-router.js"></script>
@@ -21,7 +28,31 @@
   	<!-- Latest compiled and minified JavaScript -->
   	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-  	<link rel="stylesheet" type="text/css" href="./styles/viv.css">
+  	<!--link rel="stylesheet" type="text/css" href="./styles/viv.css"-->
+    <link rel="stylesheet" type="text/css" href="./styles/viv-tiles.css">
+    
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">     
+        <div class="navbar-header"> 
+          <a class="navbar-brand" href="#" ng-click="w=''">Virtual Is Viral</a>
+        </div>
+        <form class="navbar-form navbar-left" role="search">
+          <input type="search" class="form-control" ng-model="w" placeholder="Search ..."/>
+        </form>
+         <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{user}} <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href ng-click="getAllWorks()">Common Board</a></li>
+                <li><a href ng-click="getUserWorks('borobio')">Your Board</a></li>    
+                <li class="divider"></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+             </li>
+             <li><a href="#"><span class="badge" >42</span></a></a></li>
+          </ul>
+      </div>      
+    </nav>
   </head>
   <body>
     <div ui-view></div>

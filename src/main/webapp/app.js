@@ -3,7 +3,7 @@ var vivApp = angular.module('viv', ['ui.router', 'ui.bootstrap', 'vivControllers
 vivApp.config(function($stateProvider, $urlRouterProvider) {
   //
   // For any unmatched url
-  $urlRouterProvider.otherwise("/Board");
+  //$urlRouterProvider.otherwise("/Board");
   //
   // Now set up the states
   $stateProvider
@@ -15,6 +15,11 @@ vivApp.config(function($stateProvider, $urlRouterProvider) {
     .state('NewBoard', {
       url: '/NewBoard',
       templateUrl: 'partials/NewBoard.html',
+      controller: 'boardController'
+    })
+    .state('Tiles', {
+      url: '/Tiles',
+      templateUrl: 'Tiles.html',
       controller: 'boardController'
     })
 });
