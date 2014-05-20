@@ -19,7 +19,6 @@ vivControllers.controller(
 
 		$scope.getAllWorks();
     $scope.user = 'Gonzalo';
-
 	});
 
 vivControllers.controller(

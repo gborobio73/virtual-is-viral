@@ -1,5 +1,5 @@
 <!DOCTYPE HTML> 
-<html lang="en-US"> 
+<html lang="en-US" ng-app="viv"> 
 <head> 
   <title>Virtual Is Viral</title>
 
@@ -25,8 +25,20 @@
      
     <!--link rel="stylesheet" type="text/css" href="./styles/viv.css"-->
     <link rel="stylesheet" type="text/css" href="./styles/viv-tiles.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+      <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
     
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    
+  
+</head> 
+<body class="no-touch" ng-controller="boardController"> 
+  
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container-fluid">     
         <div class="navbar-header"> 
           <a class="navbar-brand" href="#" ng-click="w=''">Virtual Is Viral</a>
@@ -48,90 +60,85 @@
           </ul>
       </div>      
     </nav>
-  
-</head> 
-<body class="no-touch"> 
-  
-  <div class="wrap">
+
+   <div class="wrap" >
+    <div class="box" ng-repeat="work in works | filter:w" >
+      <div class="boxInner" >
+        <img src="./img/{{work.ImageId}}.jpg" />
+        <div class="titleBox">[{{$index + 1}}] {{work.Name}}: {{work.Description}}</div>
+      </div>
+    </div>
+    <div>count: {{count}}</div>
+  </div>
+
+<button ng-click ="count = count +1">Click me</button> count: {{count}}
+
+  <!--div class="wrap">
     
-    <!-- Define all of the tiles: -->
     <div class="box">
       <div class="boxInner">
-        <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/7.jpg" />
+        <img src="http://192.168.0.10:8080/img/1.jpg" />
         <div class="titleBox">Butterfly</div>
       </div>
     </div>
     <div class="box">
       <div class="boxInner">
-        <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/1.jpg" />
+        <img src="http://localhost:8080/img/2.jpg" />
         <div class="titleBox">An old greenhouse</div>
       </div>
     </div>
     <div class="box">
       <div class="boxInner">
-        <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/2.jpg" />
+        <img src="http://localhost:8080/img/3.jpg" />
         <div class="titleBox">Purple wildflowers</div>
       </div>
     </div>
     <div class="box">
       <div class="boxInner">
-        <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/3.jpg" />
+        <img src="http://localhost:8080/img/4.jpg" />
         <div class="titleBox">A birdfeeder</div>
       </div>
     </div>
     <div class="box">
       <div class="boxInner">
-        <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/10.jpg" />
+        <img src="http://localhost:8080/img/5.jpg" />
         <div class="titleBox">Crocus close-up</div>
       </div>
     </div>
     <div class="box">
       <div class="boxInner">
-        <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/4.jpg" />
+        <img src="http://localhost:8080/img/6.jpg" />
         <div class="titleBox">The garden shop</div>
       </div>
     </div>
     <div class="box">
       <div class="boxInner">
-        <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/5.jpg" />
+        <img src="http://localhost:8080/img/7.jpg" />
         <div class="titleBox">Spring daffodils</div>
       </div>
     </div>
     <div class="box">
       <div class="boxInner">
-        <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/6.jpg" />
+        <img src="http://localhost:8080/img/8.jpg" />
         <div class="titleBox">Iris along the path</div>
       </div>
     </div>
     <div class="box">
       <div class="boxInner">
-        <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/8.jpg" />
+        <img src="http://localhost:8080/img/9.jpg" />
         <div class="titleBox">The garden blueprint</div>
       </div>
     </div>
     <div class="box">
       <div class="boxInner">
-        <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/9.jpg" />
+        <img src="http://localhost:8080/img/10.jpg" />
         <div class="titleBox">The patio</div>
       </div>
     </div>
-    <div class="box">
-      <div class="boxInner">
-        <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/11.jpg" />
-        <div class="titleBox">Bumble bee collecting nectar</div>
-      </div>
-    </div>
-    <div class="box">
-      <div class="boxInner">
-        <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/12.jpg" />
-        <div class="titleBox">Winding garden path</div>
-      </div>
-    </div>
     
-  </div>
+  </div-->
   <!-- /#wrap -->
   
-  <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
   <script type="text/javascript">
   $(function(){
      // See if this is a touch device
@@ -140,8 +147,9 @@
         // Set the correct body class
         $('body').removeClass('no-touch').addClass('touch');
        
-        // Add the touch toggle to show text
-        $('div.boxInner img').click(function(){
+        
+        // Add the touch toggle to show text -> in touch does not work because angular. have to use ng-click
+        $('div.boxInner').click(function(){
            $(this).closest('.boxInner').toggleClass('touchFocus');
         });
      }
