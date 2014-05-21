@@ -12,7 +12,6 @@ body {
     float: left;
     position: relative;
     width: 20%;
-    /*padding-bottom: 20%;*/
  }
  /*
  .boxInner {
@@ -55,8 +54,7 @@ body {
     padding: 15px;
     padding-bottom: 5px;
     background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
-    opacity: 1;
-    
+    opacity: 1;    
     -webkit-transition: all .2s ease;
     -moz-transition: all .2s ease;
     -o-transition: all .2s ease;
@@ -70,11 +68,21 @@ body {
     margin-bottom: 5px;
 }
 
-.pin p {
+.pin .description {
+    font: 12px/18px Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.pin .user {
     font: 12px/18px Arial, sans-serif;
     color: #333;
     margin: 0;
 }
+
 
  /*body.no-touch .boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleBox {
     margin-bottom: 0;
@@ -88,14 +96,12 @@ body.no-touch .boxInner .titleBox, body.touch .boxInner .titleBox {
     /* Smartphone view: 1 tile */
     .box {
        width: 100%;
-       /*padding-bottom: 100%;*/
     }
  }
  @media only screen and (max-width : 650px) and (min-width : 481px) {
     /* Tablet view: 2 tiles */
     .box {
        width: 50%;
-       /*padding-bottom: 50%;*/
     }
  }
  @media only screen and (max-width : 1050px) and (min-width : 651px) {
@@ -105,13 +111,25 @@ body.no-touch .boxInner .titleBox, body.touch .boxInner .titleBox {
     }
     .box {
        width: 33.3%;
-       /*padding-bottom: 33.3%;*/
     }
  }
  @media only screen and (max-width : 1290px) and (min-width : 1051px) {
     /* Medium desktop: 4 tiles */
     .box {
        width: 25%;
-       /*padding-bottom: 25%;*/
+    }
+ }
+
+@media only screen and (max-width : 1630px) and (min-width : 1291px) {
+    /* Big desktop: 5 tiles */
+    .box {
+       width: 20%;
+    }
+ }
+
+ @media only screen and (min-width : 1631px) {
+    /* XXL desktop: 6 tiles */
+    .box {
+       width: 16.6%;
     }
  }
