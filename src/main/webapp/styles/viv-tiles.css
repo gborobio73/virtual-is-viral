@@ -97,11 +97,17 @@ body.no-touch .boxInner .titleBox, body.touch .boxInner .titleBox {
     .box {
        width: 100%;
     }
+    .navbar{
+        visibility:hidden;
+    }
  }
  @media only screen and (max-width : 650px) and (min-width : 481px) {
     /* Tablet view: 2 tiles */
     .box {
        width: 50%;
+    }
+    .navbar{
+        visibility:hidden;
     }
  }
  @media only screen and (max-width : 1050px) and (min-width : 651px) {
