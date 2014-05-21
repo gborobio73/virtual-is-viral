@@ -14,7 +14,11 @@ public class WorkRepository{
             new Work("7", "Erika","Anoter work", "Another work", "7"),
             new Work("8", "Leeloo","Painting", "A painting work", "8"),
             new Work("9", "Leeloo","Writting", "A postal card work", "9"),
-            new Work("10", "Borobio", "A picture work", "A picture of Leeloo", "10")
+            new Work("10", "Borobio", "A picture work", "A picture of Borobio", "10"),
+            new Work("11", "Erika", "A picture work", "A picture of Erika", "11"),
+            new Work("12", "Borobio", "A picture work", "A picture of Borobio", "12"),
+            new Work("13", "Leeloo", "A picture work", "A picture of Leeloo", "13"),
+            new Work("14", "Borobio", "A picture work", "A picture of Borobio", "14")
     	);
 
 
