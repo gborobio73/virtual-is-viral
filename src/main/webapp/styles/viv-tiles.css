@@ -6,7 +6,7 @@ body {
  }
  .wrap {
     overflow: hidden;
-    margin: 10px;
+    margin: 20px;
  }
  .box {
     float: left;
@@ -14,6 +14,7 @@ body {
     width: 20%;
     /*padding-bottom: 20%;*/
  }
+ /*
  .boxInner {
     position: absolute;
     left: 10px;
@@ -41,7 +42,7 @@ body {
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
  }
-
+*/
 .pin {
     display: inline-block;
     background: #FEFEFE;
