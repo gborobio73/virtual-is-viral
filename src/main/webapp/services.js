@@ -28,5 +28,21 @@ vivServices.factory('services', function($http) {
                             return result.data;
                         });
         }
+    services.getUnreadNotificationsAmount = function(user){
+        //return the promise directly.
+             return $http.get('/rest/notifications/unreadamount/'+user)
+                       .then(function(result) {
+                            //resolve the promise as the data
+                            return result.data;
+                        });
+        }
+    services.getNotifications = function(user){
+        //return the promise directly.
+             return $http.get('/rest/notifications/'+user)
+                       .then(function(result) {
+                            //resolve the promise as the data
+                            return result.data;
+                        });
+        }
     return services;
 });

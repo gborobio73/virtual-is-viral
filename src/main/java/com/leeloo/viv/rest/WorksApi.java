@@ -10,12 +10,12 @@ import java.util.List;
 import com.google.gson.Gson;
 
 @Path("works")
-public class Boards {
+public class WorksApi {
 
     @GET
     @Path("/all")
     @Produces({ MediaType.APPLICATION_JSON })
-    public String getCommonBoardContent() {
+    public String getAllWorks() {
         Gson gson = new Gson();
         List<Work> works = new WorkRepository().getAllWorks();
         return gson.toJson(works);
@@ -24,7 +24,7 @@ public class Boards {
     @GET
     @Path("/user/{user}")
     @Produces({ MediaType.APPLICATION_JSON })
-    public String getUserBoardContent(@PathParam("user") String user) {
+    public String getUserWorks(@PathParam("user") String user) {
         Gson gson = new Gson();
         List<Work> works = new WorkRepository().getUserWorks(user);
         return gson.toJson(works);

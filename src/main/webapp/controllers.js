@@ -22,7 +22,25 @@ viv.controller(
 
 viv.controller(
   'userDataController', function ($scope, services) {
-    $scope.user = 'Gonzalo Borobio';
+    var user = 'Borobio';
+    var getUnreadNotificationsAmount = function(user){
+      services.getUnreadNotificationsAmount(user).then(
+        function(result) {
+          $scope.unreadNotifications = result;
+          }); 
+    }
+
+    var getNotifications = function(user){
+      services.getNotifications(user).then(
+        function(result) {
+          console.log(result);
+          $scope.notifications = result;
+          }); 
+    }
+
+    getUnreadNotificationsAmount(user);
+    getNotifications(user);
+    $scope.user = user;
   });
 
 
