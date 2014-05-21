@@ -11,3 +11,6 @@ Run:
 ~/Documents/Tools/apache-maven-3.2.1/bin/mvn jetty:run
 
 ~/Documents/Tools/apache-maven-3.2.1/bin/mvn jetty:run-war
+
+proxy
+git config --global http.proxy iffipx.ifint.biz:8080
