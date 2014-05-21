@@ -41,6 +41,11 @@ viv.controller(
     getUnreadNotificationsAmount(user);
     getNotifications(user);
     $scope.user = user;
+
+    $scope.markAllNotificationsAsRead = function(user) {
+        console.log("markAllNotificationsAsRead for user:" +user);
+        $scope.unreadNotifications = 0;
+    };
   });
 
 

@@ -9,7 +9,9 @@
      <ul class="nav navbar-nav navbar-right" ng-controller = 'userDataController'>
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"  >{{user}} <b class="caret"></b></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"  >{{user}} 
+            <b class="caret"></b>
+          </a>
           <ul class="dropdown-menu">
             <li><a href ="/#/Board">Common Board</a></li>
             <li class="divider"></li>
@@ -17,17 +19,20 @@
           </ul>
          </li>
 
-         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+         <li class="dropdown" >
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
             <span class="badge">{{unreadNotifications}} </span>
-            <b class="caret"></b>
+            <!--b class="caret"></b-->
           </a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu" >
+            <li><a href="" ng-click = "markAllNotificationsAsRead(user)">Mark all as read</a></li>
+            <li class="divider"></li>
             <li ng-repeat="notification in notifications">
               <a href="/#/Details/{{notification.WorkId}}">{{notification.Notification}}</a>
             </li>
           </ul>
         </li>
+        
       </ul>
   </div>      
 </nav>
