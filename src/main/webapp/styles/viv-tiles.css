@@ -1,12 +1,12 @@
 body {
     margin: 0;
-    padding: 0;
     background: #EEE;
     font: 10px/13px 'Lucida Sans',sans-serif;
+    padding-top: 3%;
  }
  .wrap {
     overflow: hidden;
-    margin: 20px;
+    margin: 10px;
  }
  .box {
     float: left;
@@ -100,6 +100,9 @@ body.no-touch .boxInner .titleBox, body.touch .boxInner .titleBox {
  }
  @media only screen and (max-width : 1050px) and (min-width : 651px) {
     /* Small desktop / ipad view: 3 tiles */
+    body {
+        padding-top: 5%;
+    }
     .box {
        width: 33.3%;
        /*padding-bottom: 33.3%;*/
