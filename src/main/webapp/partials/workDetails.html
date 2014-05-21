@@ -1,12 +1,13 @@
 
-  <div class="modal-dialog modal-lg" ng-controller="WorkDetailsCtrl">
-    <section>
-      <div class="work-details">
-          Work is {{work}}
-          <img src= './img/{{work.ImageId}}.jpg'/>
-          <div class="modal-footer">
-            <button class="btn btn-primary" ng-click="ok()">OK</button>
-          </div>
-      </div>
-    </section>
-  </div>
+<html lang="en-US" ng-app="viv"> 
+<head></head>
+<body>
+  <div nav-menu></div>
+  <section>
+    <div class="work-details">
+        Work is {{workDetails}}
+        <img src= './img/{{workDetails.ImageId}}.jpg'/>
+    </div>
+  </section>
+</body>
+</html>

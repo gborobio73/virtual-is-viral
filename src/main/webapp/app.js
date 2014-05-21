@@ -22,4 +22,9 @@ vivApp.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: 'Tiles.html',
       controller: 'boardController'
     })
+    .state('Details', {
+      url: '/Details/:workId',
+      templateUrl: 'partials/workDetails.html',
+      controller: 'detailsController'
+    })
 });

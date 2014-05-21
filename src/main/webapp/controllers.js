@@ -1,6 +1,6 @@
-var vivControllers = angular.module('vivControllers', []);
+var viv = angular.module('vivControllers', []);
  
-vivControllers.controller(
+viv.controller(
 	'boardController', function ($scope, services) {
 
 		$scope.getAllWorks = function() {
@@ -18,36 +18,31 @@ vivControllers.controller(
     };
 
 		$scope.getAllWorks();
-    $scope.user = 'Gonzalo';
 	});
 
-vivControllers.controller(
-  'WorkDetailsCtrl',function ($scope, $modal, $log, services) {
+viv.controller(
+  'userDataController', function ($scope, services) {
+    $scope.user = 'Gonzalo Borobio';
+  });
 
-    var ModalInstanceCtrl = function ($scope, $modalInstance, workId) {
-      $scope.workId = workId;
-      services.getWork(workId).then(function(result) {
-           $scope.work=result;
-          } );
-     
-      $scope.ok = function () {
-        $modalInstance.close();
-      };
 
-      $scope.cancel = function () {
-        $modalInstance.dismiss('cancel');
-      };
+viv.controller(
+  'detailsController', function ($scope, $stateParams, services) {
+    
+    var getWork = function(workId) {
+      services.getWork(workId).then(
+        function(result) {
+          $scope.workDetails = result;
+          console.log ('getWork() returns: ' + JSON.stringify(result));
+          }); 
     };
+    var workId = $stateParams.workId;
+    getWork(workId);
+    
+  });
 
-    $scope.open = function (workId) {
-      var modalInstance = $modal.open({
-        templateUrl: './partials/workDetails.html',
-        controller: ModalInstanceCtrl,
-        resolve: {
-          workId: function () {
-            return workId;
-          }
-        }
-      });
+viv.directive('navMenu', function() {
+    return {
+      templateUrl: 'shared/nav-menu.html'
     };
-});
+  });
