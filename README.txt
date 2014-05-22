@@ -13,4 +13,6 @@ Run:
 ~/Documents/Tools/apache-maven-3.2.1/bin/mvn jetty:run-war
 
 proxy
-git config --global http.proxy iffipx.ifint.biz:8080
+git config --global http.proxy http://s7218:hamlet123456@iffipx.ifint.biz:8080
+
+git config --global https.proxy http://s7218:hamlet123456@iffipx.ifint.biz:8080
