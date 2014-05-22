@@ -29,7 +29,6 @@ vivServices.factory('services', function($http) {
                         });
         }
     services.getUnreadNotificationsAmount = function(user){
-        //return the promise directly.
              return $http.get('/rest/notifications/unreadamount/'+user)
                        .then(function(result) {
                             //resolve the promise as the data
