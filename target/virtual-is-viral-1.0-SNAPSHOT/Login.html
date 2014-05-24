@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <title>Welcome to Virtual Is Viral</title>
+    <script type="text/javascript">
+      (function() {
+        var po = document.createElement('script');
+        po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://plus.google.com/js/client:plusone.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(po, s);
+      })();
+
+    </script>
+    <!-- Enable media queries for old IE -->
+    <!--[if lt IE 9]>
+       <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">  
+
+    <script src="./scripts/angular.js"></script>
+    <script src="./scripts/angular-cookies.js"></script>
+    <script src="./scripts/angular-ui-router.js"></script>
+    <script src="./scripts/ui-bootstrap-tpls-0.11.0.min.js"></script>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="./scripts/jquery.cookie.js"></script>
+
+      <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <!--link rel="stylesheet" type="text/css" href="./styles/viv.css"-->
+    <link rel="stylesheet" type="text/css" href="./styles/viv-tiles.css">
+
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1>Welcome to Virtual Is Viral.</h1>
+      <!--p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p-->
+      <p></p>
+      <div id="gConnect">
+        <button class="g-signin"
+            data-scope="https://www.googleapis.com/auth/plus.login"
+            data-requestvisibleactions="http://schemas.google.com/AddActivity"
+            data-clientId="17792696780-egbqbeqkdbamg2aojs0e7otgvq1i2p06.apps.googleusercontent.com"
+            data-callback="onSignInCallback"
+            data-theme="dark"
+            data-cookiepolicy="single_host_origin">
+        </button>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+     /**
+     * Calls the helper method that handles the authentication flow.
+     *
+     * @param {Object} authResult An Object which contains the access token and
+     *   other authentication information.
+     */
+    function onSignInCallback(authResult) {
+      gapi.client.load('plus','v1', function(){
+        if (authResult['access_token']) {
+          //Aith was good    
+          $.cookie("vivSessionState",authResult['session_state']);
+          var request = gapi.client.plus.people.get({'userId' : 'me'});
+            request.execute(function(resp) {
+              //console.log('RESP: ' + JSON.stringify(resp));
+
+              var email = resp['emails'].filter(function(v) {
+                return v.type === 'account'; // Filter out the primary email
+              })[0].value;
+              var user= {
+                'id': email,
+                'name': resp.displayName,
+                'image' : resp.image.url
+              };
+              localStorage.setItem("user", JSON.stringify(user));
+              window.location.replace("/#/Board");
+            });   
+        
+
+        } else if (authResult['error']) {
+          // There was an error, which means the user is not signed in.
+          // As an example, you can handle by writing to the console:
+          if (authResult['error'] ='user_signed_out') {
+            console.log('User has sign out');
+            $('#gConnect').show();
+          }
+          else{
+            console.log('There was an error: ' + authResult['error']);
+            $('#authOps').hide('slow');
+            $('#gConnect').show();
+          }
+          
+        }
+        console.log('authResult', authResult);
+      });
+    }
+    
+  </script>
+  <footer>
+    <p>Copyright 2014 Leeloo Inc.</p>
+  </footer>
+</html>
