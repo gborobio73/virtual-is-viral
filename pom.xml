@@ -86,6 +86,7 @@
                 </configuration>
                 <version>9.2.0.M0</version>
             </plugin>
+            
        </plugins>
     </build>
 
