@@ -12,7 +12,5 @@ Run:
 
 ~/Documents/Tools/apache-maven-3.2.1/bin/mvn jetty:run-war
 
-proxy
-git config --global http.proxy http://s7219:hamlet123456@iffipx.ifint.biz:8080
-
-git config --global https.proxy https://s7219:hamlet123456@iffipx.ifint.biz:8080
+inspect angular scope
+angular.element($0).scope()
