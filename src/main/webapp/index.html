@@ -13,7 +13,7 @@
     </script>
     <!-- Enable media queries for old IE -->
     <!--[if lt IE 9]>
-       <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+       <script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">  
@@ -30,7 +30,7 @@
     <script src="controllers.js"></script>
     <script src="navController.js"></script>    
       
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="./scripts/jquery.cookie.js"></script>
 
       <!-- Latest compiled and minified CSS -->
@@ -57,7 +57,7 @@
     $( window ).load(function() {
         var $injector = angular.bootstrap(document, ['viv']);  
         console.log('Angular bootstrap complete.'); 
-        
+
         if (!sessionStorage.getItem('user')){
           window.location.href = "/Login.html";
         }
