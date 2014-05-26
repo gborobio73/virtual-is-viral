@@ -57,7 +57,8 @@
     $( window ).load(function() {
         var $injector = angular.bootstrap(document, ['viv']);  
         console.log('Angular bootstrap complete.'); 
-        if (!localStorage.getItem('user')){
+        
+        if (!sessionStorage.getItem('user')){
           window.location.href = "/Login.html";
         }
     });

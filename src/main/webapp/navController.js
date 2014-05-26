@@ -15,7 +15,7 @@ angular.module('vivControllers').controller(
           }); 
     }
 
-    $scope.user = JSON.parse(localStorage.getItem('user'));
+    $scope.user = JSON.parse(sessionStorage.getItem('user'));
     getUnreadNotificationsAmount($scope.user.id);
     getNotifications($scope.user.id);
 
@@ -28,7 +28,7 @@ angular.module('vivControllers').controller(
     $scope.logout = function() {
         console.log("logout.");
         gapi.auth.signOut();
-        localStorage.removeItem('user');
+        sessionStorage.removeItem('user');
         window.location.replace("/Logout.html");
     };
     $scope.testStuff = function() {

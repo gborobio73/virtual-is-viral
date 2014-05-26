@@ -80,7 +80,7 @@
                 'name': resp.displayName,
                 'image' : resp.image.url
               };
-              localStorage.setItem("user", JSON.stringify(user));
+              sessionStorage.setItem("user", JSON.stringify(user));
               window.location.replace("/#/Board");
             });   
         
