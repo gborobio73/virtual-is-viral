@@ -5,6 +5,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -15,10 +16,11 @@ public class WorksApi {
     @GET
     @Path("/all")
     @Produces({ MediaType.APPLICATION_JSON })
-    public String getAllWorks() {
+    public Response getAllWorks() {
         Gson gson = new Gson();
         List<Work> works = new WorkRepository().getAllWorks();
-        return gson.toJson(works);
+        //return gson.toJson(works);
+        return Response.ok().entity(gson.toJson(works)).build();
     }
 
     @GET
@@ -39,4 +41,12 @@ public class WorksApi {
         return gson.toJson(work);
     }
 
+    @GET
+    @Path("/work/test")
+    @Produces({ MediaType.APPLICATION_JSON })
+    public Response test() {
+        Gson gson = new Gson();
+        //return gson.toJson("Well, hello there!");
+        return Response.ok(gson.toJson("Well, hello there!"), MediaType.APPLICATION_JSON).build();
+    }
 }
