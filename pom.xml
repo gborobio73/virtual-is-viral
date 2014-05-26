@@ -3,11 +3,11 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.example</groupId>
-    <artifactId>simple-heroku-webapp</artifactId>
+    <groupId>com.leeloo.viv</groupId>
+    <artifactId>virtual-is-viral</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>simple-heroku-webapp</name>
+    <name>virtual-is-viral</name>
 
     <dependencyManagement>
         <dependencies>
@@ -60,7 +60,7 @@
     </dependencies>
 
     <build>
-        <finalName>simple-heroku-webapp</finalName>
+        <finalName>virtual-is-viral</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
