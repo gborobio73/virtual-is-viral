@@ -1,0 +1,25 @@
+{
+   "state":"",
+   "access_token":"ya29.IgAdHpDhd5ZBoRsAAACmcgjIYrWAGpx2c-_Ud7I3tQ5fWWwCAGIzGaQutrIa_g",
+   "token_type":"Bearer",
+   "expires_in":"3600",
+   "code":"4/clfQCHvP8aaLkVqQ3mPQm7OeAbRN.8m2KwNuytGUVOl05ti8ZT3Zb7DpxjAI",
+   "scope":"https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.moments.write https://www.googleapis.com/auth/plus.me https://www.googleapis.com/auth/plus.profile.agerange.read https://www.googleapis.com/auth/plus.profile.language.read https://www.googleapis.com/auth/plus.circles.members.read https://www.googleapis.com/auth/plus.profile.emails.read",
+   "id_token":"eyJhbGciOiJSUzI1NiIsImtpZCI6ImQxN2I3YmQwOGE4M2FjOTExOTA5MWNmY2NlNzI4MDY2NzNiOTIzMTIifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwic3ViIjoiMTA0NDg0MzMzMTM1MTkzNjIwMDMyIiwiYXpwIjoiMTc3OTI2OTY3ODAtZWdicWJlcWtkYmFtZzJhb2pzMGU3b3RndnExaTJwMDYuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJlbWFpbCI6Imdib3JvYmlvQGdtYWlsLmNvbSIsImF0X2hhc2giOiJhYl8xNEpldVJ4NlpQYnBrQ3ZqTGlRIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF1ZCI6IjE3NzkyNjk2NzgwLWVnYnFiZXFrZGJhbWcyYW9qczBlN290Z3ZxMWkycDA2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiY19oYXNoIjoiSXFJWEtiVE1oMzF6eTk5eHlBVlhJZyIsImlhdCI6MTQwMTEwODc2MSwiZXhwIjoxNDAxMTEyNjYxfQ.HUEM_tchLAqKFesSM_BHjtfU2BMLt3n5fOkOTGGpb18Y_fvwJ_NgmW-sI8-JmtlMSgvOLqUizjHzixZ1bs00NUKrGF9pRotDDw8dlFQUBhil7uqB-kjkq2PnWf7eHg7msSTa9GsOP7yiFURZbyQqQi_Q0IU30bLOVZ3oyoKbTQU",
+   "authuser":"0",
+   "num_sessions":"1",
+   "session_state":"204b023bda0d4189911b4b123b208334f354aedb..912f",
+   "prompt":"none",
+   "client_id":"17792696780-egbqbeqkdbamg2aojs0e7otgvq1i2p06.apps.googleusercontent.com",
+   "g_user_cookie_policy":"single_host_origin",
+   "cookie_policy":"single_host_origin",
+   "response_type":"code token id_token gsession",
+   "issued_at":"1401109062",
+   "expires_at":"1401112662",
+   "_aa":"0",
+   "status":{
+      "google_logged_in":true,
+      "signed_in":true,
+      "method":"AUTO"
+   }
+}
