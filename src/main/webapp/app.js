@@ -36,7 +36,7 @@ vivApp.config(function($stateProvider, $urlRouterProvider) {
     })
 });
 
-vivApp.factory('httpRequestInterceptor', function ($cookies, $location) {
+vivApp.factory('httpRequestInterceptor', function ($location) {
   
   return {
     
@@ -49,7 +49,7 @@ vivApp.factory('httpRequestInterceptor', function ($cookies, $location) {
         }
       };
 
-      var sessionState = $cookies.vivSessionState;
+      var sessionState = sessionStorage.vivSessionState;
       sessionParams = {
         "client_id": '17792696780-egbqbeqkdbamg2aojs0e7otgvq1i2p06.apps.googleusercontent.com',
         "session_state": sessionState 

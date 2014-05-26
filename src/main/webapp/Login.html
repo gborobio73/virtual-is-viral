@@ -66,11 +66,10 @@
     function onSignInCallback(authResult) {
       gapi.client.load('plus','v1', function(){
         if (authResult['access_token']) {
-          //Aith was good    
-          $.cookie("vivSessionState",authResult['session_state']);
+          //Auth was good    
+          sessionStorage.setItem("vivSessionState", authResult['session_state']);
           var request = gapi.client.plus.people.get({'userId' : 'me'});
             request.execute(function(resp) {
-              //console.log('RESP: ' + JSON.stringify(resp));
 
               var email = resp['emails'].filter(function(v) {
                 return v.type === 'account'; // Filter out the primary email

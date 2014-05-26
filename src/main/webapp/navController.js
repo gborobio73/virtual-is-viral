@@ -1,5 +1,5 @@
 angular.module('vivControllers').controller(
-  'userDataController', function ($scope, $cookies, $location, services) {
+  'userDataController', function ($scope, $location, services) {
     
     var getUnreadNotificationsAmount = function(user){
       services.getUnreadNotificationsAmount(user).then(
@@ -19,7 +19,6 @@ angular.module('vivControllers').controller(
     getUnreadNotificationsAmount($scope.user.id);
     getNotifications($scope.user.id);
 
-    
     $scope.markAllNotificationsAsRead = function(user) {
         console.log("markAllNotificationsAsRead for user:" +user);
         $scope.unreadNotifications = 0;

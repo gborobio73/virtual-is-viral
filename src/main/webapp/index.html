@@ -28,7 +28,8 @@
 
     <script src="directives.js"></script>
     <script src="controllers.js"></script>
-    <script src="navController.js"></script>    
+    <script src="navController.js"></script>
+    <script src="index.js"></script>
       
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="./scripts/jquery.cookie.js"></script>
@@ -55,11 +56,12 @@
   </body>
   <script type="text/javascript">
     $( window ).load(function() {
-        var $injector = angular.bootstrap(document, ['viv']);  
-        console.log('Angular bootstrap complete.'); 
-
-        if (!sessionStorage.getItem('user')){
+        if (!hasUserSignedIn()){
           window.location.href = "/Login.html";
+        }
+        else{
+          var $injector = angular.bootstrap(document, ['viv']);
+          console.log('Angular bootstrap complete.'); 
         }
     });
      
