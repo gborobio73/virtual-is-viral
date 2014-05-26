@@ -41,5 +41,13 @@ angular.module('vivServices').factory('services', function($http, $http) {
                             return result.data;
                         });
         }
+    services.getUser = function(){
+             return JSON.parse(sessionStorage.getItem('user'));
+        }
+
+    services.removeUser = function (){
+        sessionStorage.removeItem('user');
+    }
+
     return services;
 });
