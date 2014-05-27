@@ -49,5 +49,5 @@ angular.module('vivServices').factory('services', function($http, $http) {
         sessionStorage.removeItem('user');
     }
 
-    return services;
+    return services; 
 });

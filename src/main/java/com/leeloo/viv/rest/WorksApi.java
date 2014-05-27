@@ -6,6 +6,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.NewCookie;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -39,14 +40,5 @@ public class WorksApi {
         Gson gson = new Gson();
         Work work = new WorkRepository().getWork(id);
         return gson.toJson(work);
-    }
-
-    @GET
-    @Path("/work/test")
-    @Produces({ MediaType.APPLICATION_JSON })
-    public Response test() {
-        Gson gson = new Gson();
-        //return gson.toJson("Well, hello there!");
-        return Response.ok(gson.toJson("Well, hello there!"), MediaType.APPLICATION_JSON).build();
     }
 }
